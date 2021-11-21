@@ -1,4 +1,4 @@
-# Cloud-based AI Inspection
+# United Jackets Cloud-based AI Inspection
 
 ## How we built it
 Our cloud-based AI inspection demo has three main components - image preprocessing Azure Function, model trained and inferenced with Azure Vision API and Plotly board for an easy visualization of results. Once the image of the chip is uploaded in the Azure Storage it triggers the pre-processing python script of the image in the Azure Functions and it calls Azure Custom Vision API Request to make a prediction, whether a chip has a defect or not.
