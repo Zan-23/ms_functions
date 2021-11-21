@@ -1,7 +1,6 @@
 # Cloud-based AI Inspection
-...
 
-# How we built it
+## How we built it
 Our cloud-based AI inspection demo has three main components. Once the image of the chip is uploaded in the Azure Storage it triggers the pre-processing python script of the image in the Azure Functions and it calls Azure Custom Vision API Request to make a prediction, whether a chip has a defect or not.
 
 ## Image Processing
