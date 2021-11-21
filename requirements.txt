@@ -11,3 +11,6 @@ Pillow
 typer
 glob2
 pathlib 
+pytorch 
+torchvision 
+git+https://github.com/cherubicXN/hawp.git@inference

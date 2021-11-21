@@ -8,13 +8,10 @@ from dotenv import load_dotenv   # for variables
 import base64
 import io
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
-import cv2
-import json
-import typer
-import glob
-import numpy.linalg as la
-import sys
 import os, time, uuid
+import typer
+
+from BlobTrigger1.image_preprocessing import start_image_processing
 
 
 
@@ -95,6 +92,10 @@ def main(myblob: func.InputStream):
     png_bytes, image_name = convert_blob_to_bytes(myblob)
 
     # TODO preprocess image 
+    with open("./BlobTrigger1/cache_images_in/" + image_name,'wb') as image_file:
+        logging.warn("Writting to image")
+        image_file.write(png_bytes)
+    start_image_processing("./BlobTrigger1/cache_images_in/", "./BlobTrigger1/cache_images_out/")
 
     # Retrieve results
     results = detect_scratches(png_bytes)
