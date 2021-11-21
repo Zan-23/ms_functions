@@ -4,13 +4,22 @@ import azure.functions as func
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 from msrest.authentication import ApiKeyCredentials
 
-import numpy as np
 from dotenv import load_dotenv   # for variables
 import base64
 import io
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
 import cv2
+import json
+import typer
+import glob
+import numpy.linalg as la
+import sys
 import os, time, uuid
+
+
+
+# from hawp import predicting
+# from hawp.predicting  import WireframeParser
 
 
 def convert_blob_to_bytes(data_blob: func.InputStream):

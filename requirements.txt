@@ -8,3 +8,6 @@ numpy
 python-dotenv
 opencv-python
 Pillow
+typer
+glob2
+pathlib 
