@@ -15,8 +15,8 @@ from data_preparation import generate_figures
 
 FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
 
-# app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME])
-app = dash.Dash(__name__, external_stylesheets=["./assets/custom.css"])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, FONT_AWESOME])
+# app = dash.Dash(__name__, external_stylesheets=["./assets/custom.css"])
 
 colors = {
     'background': '#111111',
@@ -24,12 +24,7 @@ colors = {
 }
 
 time_fig = generate_figures(colors)
-card_icon = {
-    "color": "white",
-    "textAlign": "center",
-    "fontSize": 30,
-    "margin": "auto",
-}
+
 card_group = dbc.CardGroup([
     dbc.Card(
         dbc.CardBody([
@@ -46,19 +41,20 @@ card_group = dbc.CardGroup([
 )
 
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-    dbc.Row(
-        html.H1(
-            children='United Jackets',
-            style={
-                'textAlign': 'center',
-                'color': colors['text']
-            }
-        ),
+    dbc.NavbarSimple(
+        brand="United Jackets Dashboard",
+        brand_href="#",
+        color="primary",
+        dark=True,
+        style={'margin-bottom': '25px', 'text-transform': "uppercase"},
+        className="g-0"
     ),
     dbc.Col([
-        html.Img(src=app.get_asset_url("rec_garching00048.png")),
+        #   "rec_garching00048.png"
+        html.Img(src=app.get_asset_url("rec_test.jfif"),
+                 style={'width': '500px', 'display': 'inline-block', 'vertical-align': 'top'}),
 
-    ], style={'width': '49%', 'display': 'inline-block', 'vertical-align': 'top'}),
+    ], style={'width': '39%', 'display': 'inline-block', 'vertical-align': 'top'}),
     dbc.Col(
         [
             # dbc.Row(
@@ -75,7 +71,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
                 )
             ),
             dbc.Col([card_group]),
-        ], style={'width': '49%', 'display': 'inline-block', 'vertical-align': 'top'}
+        ], style={'width': '59%', 'display': 'inline-block', 'vertical-align': 'top'}
     )
 ])
 
