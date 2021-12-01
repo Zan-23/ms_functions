@@ -43,5 +43,5 @@ We would also like to test out alternative idea related to ML: binary classifica
 ## Contributors: 
 - Daria Matiunina
 - Selman Özleyen
-- Žan Stanovnik
+- Žan Stanonik
 - Gregor Caf
